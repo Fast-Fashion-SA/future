@@ -345,29 +345,26 @@ input {
 
 .category-grid {
     display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
+    grid-template-columns: repeat(3, 1fr);
     gap: 15px;
 }
 
 .category-card {
     height: 430px;
-
     position: relative;
 
     display: flex;
-
     align-items: flex-end;
 
     overflow: hidden;
 
     background-size: cover;
-
     background-position: center;
 
     transition: transform 0.4s ease;
+
+    /* garante que a imagem de fundo apareça */
+    background-color: #222;
 }
 
 
@@ -376,10 +373,11 @@ input {
 .category-card.female {
     background-image:
         linear-gradient(
-            transparent,
-            rgba(0, 0, 0, 0.75)
+            to bottom,
+            rgba(0, 0, 0, 0.05),
+            rgba(0, 0, 0, 0.80)
         ),
-        url("posando.avif");
+        url("images/posando.avif");
 }
 
 
@@ -388,10 +386,11 @@ input {
 .category-card.male {
     background-image:
         linear-gradient(
-            transparent,
-            rgba(0, 0, 0, 0.75)
+            to bottom,
+            rgba(0, 0, 0, 0.05),
+            rgba(0, 0, 0, 0.80)
         ),
-        url("stye.jfif");
+        url("images/stye.jfif");
 }
 
 
@@ -400,49 +399,51 @@ input {
 .category-card.accessories {
     background-image:
         linear-gradient(
-            transparent,
-            rgba(0, 0, 0, 0.75)
+            to bottom,
+            rgba(0, 0, 0, 0.05),
+            rgba(0, 0, 0, 0.80)
         ),
-        url("açessorios.jfif");
+        url("images/açessorios.jfif");
 }
+
 
 .category-card:hover {
     transform: translateY(-5px);
 }
 
+
 .category-overlay {
     width: 100%;
-
     padding: 35px;
+
+    position: relative;
+    z-index: 2;
 
     color: #ffffff;
 }
 
+
 .category-overlay span {
     font-size: 11px;
-
     letter-spacing: 2px;
-
     opacity: 0.7;
 }
+
 
 .category-overlay h3 {
     margin-top: 8px;
 
     font-size: 34px;
-
     letter-spacing: -1px;
 }
+
 
 .category-overlay p {
     margin-top: 7px;
 
     font-size: 13px;
-
     opacity: 0.8;
 }
-
-
 /* ==========================================
    PRODUTOS
 ========================================== */
