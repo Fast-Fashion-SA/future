@@ -4,89 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Fast Fashion | Moda para todos os momentos</title>
-
-    <meta name="description"
-        content="Fast Fashion Confecções Importadas S.A. — moda, vestuário e acessórios.">
+    <title>Fast Fashion | Confecções Importadas S.A.</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- ================= HEADER ================= -->
+    <!-- =========================
+         BARRA SUPERIOR
+    ========================== -->
+    <div class="top-bar">
+        Frete grátis para compras acima de R$ 299
+    </div>
 
+
+    <!-- =========================
+         CABEÇALHO / NAVEGAÇÃO
+    ========================== -->
     <header class="header">
 
-        <div class="topbar">
-            <p>Frete grátis nas compras acima de R$ 299</p>
+        <div class="logo">
+            <a href="index.html">FASTFASHION</a>
         </div>
 
-        <nav class="navbar">
-
-            <a href="#" class="logo">
-                FAST<span>FASHION</span>
-            </a>
-
-            <ul class="nav-links">
-                <li><a href="#novidades">Novidades</a></li>
-                <li><a href="#feminino">Feminino</a></li>
-                <li><a href="#masculino">Masculino</a></li>
-                <li><a href="#acessorios">Acessórios</a></li>
-                <li><a href="#empresa">A empresa</a></li>
-            </ul>
-
-            <div class="nav-actions">
-
-                <button id="searchButton" aria-label="Pesquisar">
-                    🔎
-                </button>
-
-                <button id="accountButton" aria-label="Minha conta">
-                    ♙
-                </button>
-
-                <button id="cartButton" aria-label="Carrinho">
-                    🛒
-                    <span id="cartCounter">0</span>
-                </button>
-
-            </div>
-
+        <nav class="nav">
+            <a href="#novidades">Novidades</a>
+            <a href="#feminino">Feminino</a>
+            <a href="#masculino">Masculino</a>
+            <a href="#acessorios">Acessórios</a>
+            <a href="#empresa">A empresa</a>
         </nav>
 
-        <div id="searchBox" class="search-box">
-            <input
-                type="text"
-                id="searchInput"
-                placeholder="O que você está procurando?"
-            >
+        <div class="header-actions">
+
+            <div class="search-box">
+                <input 
+                    type="text" 
+                    id="searchInput"
+                    placeholder="Buscar produtos..."
+                >
+            </div>
+
+            <button class="header-button" id="accountButton">
+                Conta
+            </button>
+
+            <button class="header-button cart-button" id="cartButton">
+                Carrinho
+                <span id="cartCount">0</span>
+            </button>
+
         </div>
 
     </header>
 
 
-    <!-- ================= HERO ================= -->
-
+    <!-- =========================
+         HERO
+    ========================== -->
     <main>
 
         <section class="hero">
 
             <div class="hero-content">
 
-                <p class="eyebrow">NOVA COLEÇÃO</p>
+                <span class="hero-tag">
+                    NOVA COLEÇÃO
+                </span>
 
                 <h1>
-                    Vista o seu
-                    <strong>momento.</strong>
+                    Estilo que acompanha você.
                 </h1>
 
                 <p>
-                    Descubra peças desenvolvidas para acompanhar
-                    diferentes estilos, ocasiões e personalidades.
+                    Moda contemporânea, acessível e pensada
+                    para diferentes momentos.
                 </p>
 
-                <a href="#novidades" class="button">
+                <a href="#novidades" class="hero-button">
                     Explorar coleção
                 </a>
 
@@ -95,35 +91,54 @@
         </section>
 
 
-        <!-- ================= CATEGORIAS ================= -->
-
+        <!-- =========================
+             CATEGORIAS
+        ========================== -->
         <section class="categories">
 
-            <div class="section-title">
-                <p class="eyebrow">EXPLORE</p>
+            <div class="section-header">
+                <span>EXPLORE</span>
                 <h2>Encontre seu estilo</h2>
             </div>
 
+
             <div class="category-grid">
 
-                <a href="#feminino" class="category-card female">
-                    <div>
+                <!-- FEMININO -->
+                <a 
+                    href="#feminino"
+                    class="category-card female"
+                >
+                    <div class="category-overlay">
                         <span>01</span>
                         <h3>Feminino</h3>
+                        <p>Explorar coleção</p>
                     </div>
                 </a>
 
-                <a href="#masculino" class="category-card male">
-                    <div>
+
+                <!-- MASCULINO -->
+                <a 
+                    href="#masculino"
+                    class="category-card male"
+                >
+                    <div class="category-overlay">
                         <span>02</span>
                         <h3>Masculino</h3>
+                        <p>Explorar coleção</p>
                     </div>
                 </a>
 
-                <a href="#acessorios" class="category-card accessories">
-                    <div>
+
+                <!-- ACESSÓRIOS -->
+                <a 
+                    href="#acessorios"
+                    class="category-card accessories"
+                >
+                    <div class="category-overlay">
                         <span>03</span>
                         <h3>Acessórios</h3>
+                        <p>Explorar coleção</p>
                     </div>
                 </a>
 
@@ -132,56 +147,550 @@
         </section>
 
 
-        <!-- ================= PRODUTOS ================= -->
+        <!-- =========================
+             PRODUTOS
+        ========================== -->
+        <section class="products-section" id="novidades">
 
-        <section id="novidades" class="products-section">
-
-            <div class="section-heading">
-
+            <div class="section-header products-header">
                 <div>
-                    <p class="eyebrow">DESTAQUES</p>
-                    <h2>Novidades</h2>
+                    <span>COLEÇÃO</span>
+                    <h2>Produtos em destaque</h2>
                 </div>
 
-                <button id="viewAllButton" class="text-button">
+                <button class="view-all" id="viewAllButton">
                     Ver todos →
                 </button>
+            </div>
+
+
+            <div class="product-grid" id="productGrid">
+
+
+                <!-- =====================
+                     PRODUTO 1
+                ====================== -->
+                <article 
+                    class="product-card"
+                    data-category="feminino"
+                    data-name="blazer estruturado"
+                >
+
+                    <div class="product-image">
+
+                        <img 
+                            src="images/Blazer estruturado.webp"
+                            alt="Blazer Estruturado"
+                        >
+
+                        <span class="product-tag">
+                            NOVO
+                        </span>
+
+                        <button 
+                            class="quick-view"
+                            data-product="Blazer Estruturado"
+                        >
+                            Visualizar
+                        </button>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <span class="product-category">
+                            FEMININO
+                        </span>
+
+                        <h3>
+                            Blazer Estruturado
+                        </h3>
+
+                        <p class="product-description">
+                            Blazer de corte estruturado e acabamento sofisticado.
+                        </p>
+
+                        <strong class="price">
+                            R$ 249,90
+                        </strong>
+
+                    </div>
+
+                </article>
+
+
+                <!-- =====================
+                     PRODUTO 2
+                ====================== -->
+                <article 
+                    class="product-card"
+                    data-category="masculino"
+                    data-name="camisa essentials"
+                >
+
+                    <div class="product-image">
+
+                        <img 
+                            src="images/camisa essentials.webp"
+                            alt="Camisa Essentials"
+                        >
+
+                        <button 
+                            class="quick-view"
+                            data-product="Camisa Essentials"
+                        >
+                            Visualizar
+                        </button>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <span class="product-category">
+                            MASCULINO
+                        </span>
+
+                        <h3>
+                            Camisa Essentials
+                        </h3>
+
+                        <p class="product-description">
+                            Camisa versátil para combinações casuais e urbanas.
+                        </p>
+
+                        <strong class="price">
+                            R$ 119,90
+                        </strong>
+
+                    </div>
+
+                </article>
+
+
+                <!-- =====================
+                     PRODUTO 3
+                ====================== -->
+                <article 
+                    class="product-card"
+                    data-category="feminino"
+                    data-name="calça wide leg"
+                >
+
+                    <div class="product-image">
+
+                        <img 
+                            src="images/calça wide leg.webp"
+                            alt="Calça Wide Leg"
+                        >
+
+                        <button 
+                            class="quick-view"
+                            data-product="Calça Wide Leg"
+                        >
+                            Visualizar
+                        </button>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <span class="product-category">
+                            FEMININO
+                        </span>
+
+                        <h3>
+                            Calça Wide Leg
+                        </h3>
+
+                        <p class="product-description">
+                            Modelagem ampla com visual contemporâneo.
+                        </p>
+
+                        <strong class="price">
+                            R$ 179,90
+                        </strong>
+
+                    </div>
+
+                </article>
+
+
+                <!-- =====================
+                     PRODUTO 4
+                ====================== -->
+                <article 
+                    class="product-card"
+                    data-category="masculino"
+                    data-name="jaqueta urban"
+                >
+
+                    <div class="product-image">
+
+                        <img 
+                            src="images/jaqueta urban.webp"
+                            alt="Jaqueta Urban"
+                        >
+
+                        <span class="product-tag">
+                            DESTAQUE
+                        </span>
+
+                        <button 
+                            class="quick-view"
+                            data-product="Jaqueta Urban"
+                        >
+                            Visualizar
+                        </button>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <span class="product-category">
+                            MASCULINO
+                        </span>
+
+                        <h3>
+                            Jaqueta Urban
+                        </h3>
+
+                        <p class="product-description">
+                            Jaqueta inspirada na estética urbana contemporânea.
+                        </p>
+
+                        <strong class="price">
+                            R$ 289,90
+                        </strong>
+
+                    </div>
+
+                </article>
+
+
+                <!-- =====================
+                     PRODUTO 5
+                ====================== -->
+                <article 
+                    class="product-card"
+                    data-category="feminino"
+                    data-name="vestido essential"
+                >
+
+                    <div class="product-image">
+
+                        <img 
+                            src="images/vestido essential.webp"
+                            alt="Vestido Essential"
+                        >
+
+                        <button 
+                            class="quick-view"
+                            data-product="Vestido Essential"
+                        >
+                            Visualizar
+                        </button>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <span class="product-category">
+                            FEMININO
+                        </span>
+
+                        <h3>
+                            Vestido Essential
+                        </h3>
+
+                        <p class="product-description">
+                            Vestido minimalista para diferentes ocasiões.
+                        </p>
+
+                        <strong class="price">
+                            R$ 159,90
+                        </strong>
+
+                    </div>
+
+                </article>
+
+
+                <!-- =====================
+                     PRODUTO 6
+                ====================== -->
+                <article 
+                    class="product-card"
+                    data-category="masculino"
+                    data-name="camiseta heavy"
+                >
+
+                    <div class="product-image">
+
+                        <img 
+                            src="images/camiseta heavy.webp"
+                            alt="Camiseta Heavy"
+                        >
+
+                        <button 
+                            class="quick-view"
+                            data-product="Camiseta Heavy"
+                        >
+                            Visualizar
+                        </button>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <span class="product-category">
+                            MASCULINO
+                        </span>
+
+                        <h3>
+                            Camiseta Heavy
+                        </h3>
+
+                        <p class="product-description">
+                            Camiseta de maior gramatura com visual estruturado.
+                        </p>
+
+                        <strong class="price">
+                            R$ 89,90
+                        </strong>
+
+                    </div>
+
+                </article>
+
+
+                <!-- =====================
+                     PRODUTO 7
+                ====================== -->
+                <article 
+                    class="product-card"
+                    data-category="acessorios"
+                    data-name="bolsa mini"
+                >
+
+                    <div class="product-image">
+
+                        <img 
+                            src="images/bolsa mini.webp"
+                            alt="Bolsa Mini"
+                        >
+
+                        <button 
+                            class="quick-view"
+                            data-product="Bolsa Mini"
+                        >
+                            Visualizar
+                        </button>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <span class="product-category">
+                            ACESSÓRIOS
+                        </span>
+
+                        <h3>
+                            Bolsa Mini
+                        </h3>
+
+                        <p class="product-description">
+                            Bolsa compacta para completar produções urbanas.
+                        </p>
+
+                        <strong class="price">
+                            R$ 139,90
+                        </strong>
+
+                    </div>
+
+                </article>
+
+
+                <!-- =====================
+                     PRODUTO 8
+                ====================== -->
+                <article 
+                    class="product-card"
+                    data-category="acessorios"
+                    data-name="óculos frame"
+                >
+
+                    <div class="product-image">
+
+                        <img 
+                            src="images/oculos frame.webp"
+                            alt="Óculos Frame"
+                        >
+
+                        <button 
+                            class="quick-view"
+                            data-product="Óculos Frame"
+                        >
+                            Visualizar
+                        </button>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <span class="product-category">
+                            ACESSÓRIOS
+                        </span>
+
+                        <h3>
+                            Óculos Frame
+                        </h3>
+
+                        <p class="product-description">
+                            Design marcante para complementar o visual.
+                        </p>
+
+                        <strong class="price">
+                            R$ 99,90
+                        </strong>
+
+                    </div>
+
+                </article>
 
             </div>
 
-            <div id="productGrid" class="product-grid"></div>
+
+            <!-- MENSAGEM QUANDO NÃO ENCONTRAR PRODUTOS -->
+            <div 
+                id="noResults"
+                class="no-results"
+                style="display: none;"
+            >
+                <h3>Nenhum produto encontrado</h3>
+                <p>
+                    Tente buscar por outro nome ou categoria.
+                </p>
+            </div>
 
         </section>
 
 
-        <!-- ================= INSTITUCIONAL ================= -->
+        <!-- =========================
+             SEÇÃO FEMININO
+        ========================== -->
+        <section 
+            class="category-section"
+            id="feminino"
+        >
 
-        <section id="empresa" class="company-section">
-
-            <div class="company-image"></div>
-
-            <div class="company-content">
-
-                <p class="eyebrow">FAST FASHION CONFECÇÕES IMPORTADAS S.A.</p>
+            <div>
+                <span>COLEÇÃO FEMININA</span>
 
                 <h2>
-                    Moda que acompanha
-                    o movimento.
+                    Feminino
                 </h2>
 
                 <p>
-                    A Fast Fashion atua no desenvolvimento, produção,
-                    distribuição e comercialização de vestuário,
-                    acessórios e produtos relacionados à moda.
+                    Peças contemporâneas desenvolvidas para diferentes
+                    estilos e ocasiões.
+                </p>
+            </div>
+
+            <a href="#novidades">
+                Ver produtos
+            </a>
+
+        </section>
+
+
+        <!-- =========================
+             SEÇÃO MASCULINO
+        ========================== -->
+        <section 
+            class="category-section"
+            id="masculino"
+        >
+
+            <div>
+                <span>COLEÇÃO MASCULINA</span>
+
+                <h2>
+                    Masculino
+                </h2>
+
+                <p>
+                    Essenciais urbanos, peças casuais e produtos
+                    desenvolvidos para o cotidiano.
+                </p>
+            </div>
+
+            <a href="#novidades">
+                Ver produtos
+            </a>
+
+        </section>
+
+
+        <!-- =========================
+             SEÇÃO ACESSÓRIOS
+        ========================== -->
+        <section 
+            class="category-section"
+            id="acessorios"
+        >
+
+            <div>
+                <span>ACESSÓRIOS</span>
+
+                <h2>
+                    Acessórios
+                </h2>
+
+                <p>
+                    Detalhes que complementam e transformam cada produção.
+                </p>
+            </div>
+
+            <a href="#novidades">
+                Ver produtos
+            </a>
+
+        </section>
+
+
+        <!-- =========================
+             A EMPRESA
+        ========================== -->
+        <section 
+            class="company-section"
+            id="empresa"
+        >
+
+            <div class="company-content">
+
+                <span>
+                    FAST FASHION CONFECÇÕES IMPORTADAS S.A.
+                </span>
+
+                <h2>
+                    Moda, escala e experiência.
+                </h2>
+
+                <p>
+                    A Fast Fashion Confecções Importadas S.A. atua no
+                    desenvolvimento, comercialização e distribuição de
+                    produtos de moda, conectando tendências contemporâneas
+                    a uma experiência de compra acessível.
                 </p>
 
                 <p>
-                    Nossa operação conecta design, fornecedores,
-                    logística e varejo para levar diferentes
-                    propostas de estilo ao consumidor.
+                    Nossa operação busca integrar fornecedores,
+                    desenvolvimento de produtos, logística e canais
+                    digitais para atender diferentes perfis de consumidores.
                 </p>
 
-                <a href="#" class="button button-dark">
+                <a href="#" class="company-button">
                     Conheça a empresa
                 </a>
 
@@ -190,94 +699,145 @@
         </section>
 
 
-        <!-- ================= RESPONSABILIDADE ================= -->
-
+        <!-- =========================
+             RESPONSABILIDADE
+        ========================== -->
         <section class="responsibility">
 
-            <div>
+            <div class="section-header">
 
-                <p class="eyebrow">NOSSO COMPROMISSO</p>
+                <span>
+                    NOSSO COMPROMISSO
+                </span>
 
                 <h2>
-                    Pensar além da
-                    peça.
+                    Responsabilidade em cada etapa
                 </h2>
 
             </div>
 
-            <div class="responsibility-text">
 
-                <p>
-                    A cadeia da moda envolve pessoas, matérias-primas,
-                    energia, transporte e resíduos.
-                </p>
+            <div class="responsibility-grid">
 
-                <p>
-                    Por isso, a Fast Fashion busca desenvolver práticas
-                    relacionadas à eficiência operacional, gestão de
-                    resíduos e relacionamento responsável com fornecedores.
-                </p>
+                <div class="responsibility-card">
 
-                <a href="#" class="text-button">
-                    Conheça nossas iniciativas →
-                </a>
+                    <span>01</span>
+
+                    <h3>
+                        Cadeia de fornecimento
+                    </h3>
+
+                    <p>
+                        Busca por relações comerciais estruturadas
+                        e acompanhamento dos processos de produção.
+                    </p>
+
+                </div>
+
+
+                <div class="responsibility-card">
+
+                    <span>02</span>
+
+                    <h3>
+                        Sustentabilidade
+                    </h3>
+
+                    <p>
+                        Iniciativas voltadas à redução de desperdícios
+                        e ao uso mais eficiente de recursos.
+                    </p>
+
+                </div>
+
+
+                <div class="responsibility-card">
+
+                    <span>03</span>
+
+                    <h3>
+                        Transparência
+                    </h3>
+
+                    <p>
+                        Compromisso com informações claras para
+                        consumidores, parceiros e colaboradores.
+                    </p>
+
+                </div>
 
             </div>
 
         </section>
 
 
-        <!-- ================= NEWSLETTER ================= -->
-
+        <!-- =========================
+             NEWSLETTER
+        ========================== -->
         <section class="newsletter">
 
-            <p class="eyebrow">FAÇA PARTE</p>
+            <div>
 
-            <h2>
-                Receba novidades
-                da Fast Fashion.
-            </h2>
+                <span>
+                    RECEBA NOVIDADES
+                </span>
+
+                <h2>
+                    Entre para nossa lista.
+                </h2>
+
+                <p>
+                    Receba informações sobre novas coleções,
+                    produtos e ofertas.
+                </p>
+
+            </div>
+
 
             <form id="newsletterForm">
 
                 <input
                     type="email"
-                    id="email"
+                    id="emailInput"
                     placeholder="Seu melhor e-mail"
                     required
                 >
 
                 <button type="submit">
-                    Cadastrar
+                    Inscrever
                 </button>
 
             </form>
 
-            <p id="newsletterMessage"></p>
+            <p 
+                id="newsletterMessage"
+                class="newsletter-message"
+            ></p>
 
         </section>
 
     </main>
 
 
-    <!-- ================= FOOTER ================= -->
-
+    <!-- =========================
+         FOOTER
+    ========================== -->
     <footer class="footer">
 
         <div class="footer-main">
 
             <div class="footer-brand">
 
-                <a href="#" class="logo">
-                    FAST<span>FASHION</span>
-                </a>
+                <h2>
+                    FASTFASHION
+                </h2>
 
                 <p>
                     Fast Fashion Confecções Importadas S.A.
                 </p>
 
                 <p>
-                    CNPJ 00.311.557/0001-43
+                    CNPJ: 00.311.557/0001-43
                 </p>
 
             </div>
@@ -285,48 +845,81 @@
 
             <div class="footer-column">
 
-                <h4>Institucional</h4>
+                <h3>
+                    Institucional
+                </h3>
 
-                <a href="#empresa">A empresa</a>
-                <a href="#">Carreiras</a>
-                <a href="#">Sustentabilidade</a>
-                <a href="#">Imprensa</a>
+                <a href="#empresa">
+                    A empresa
+                </a>
+
+                <a href="#">
+                    Trabalhe conosco
+                </a>
+
+                <a href="#">
+                    Imprensa
+                </a>
+
+                <a href="#">
+                    Sustentabilidade
+                </a>
 
             </div>
 
 
             <div class="footer-column">
 
-                <h4>Atendimento</h4>
+                <h3>
+                    Atendimento
+                </h3>
 
-                <a href="#">Central de ajuda</a>
-                <a href="#">Trocas e devoluções</a>
-                <a href="#">Entregas</a>
-                <a href="#">Contato</a>
+                <a href="#">
+                    Fale conosco
+                </a>
+
+                <a href="#">
+                    Trocas e devoluções
+                </a>
+
+                <a href="#">
+                    Entrega
+                </a>
+
+                <a href="#">
+                    Perguntas frequentes
+                </a>
 
             </div>
 
 
             <div class="footer-column">
 
-                <h4>Jurídico</h4>
+                <h3>
+                    Legal
+                </h3>
 
-                <a href="#">Política de privacidade</a>
-                <a href="#">Termos de uso</a>
-                <a href="#">Cookies</a>
-                <a href="#">LGPD</a>
+                <a href="#">
+                    Política de privacidade
+                </a>
+
+                <a href="#">
+                    Termos de uso
+                </a>
+
+                <a href="#">
+                    Cookies
+                </a>
 
             </div>
 
         </div>
 
+
         <div class="footer-bottom">
 
             <p>
                 © 2026 Fast Fashion Confecções Importadas S.A.
-            </p>
-
-            <p>
                 Todos os direitos reservados.
             </p>
 
@@ -335,23 +928,66 @@
     </footer>
 
 
-    <!-- ================= MODAL DO PRODUTO ================= -->
-
-    <div id="productModal" class="modal">
+    <!-- =========================
+         MODAL DO PRODUTO
+    ========================== -->
+    <div 
+        class="modal"
+        id="productModal"
+    >
 
         <div class="modal-content">
 
-            <button id="closeModal" class="close-modal">
+            <button 
+                class="modal-close"
+                id="modalClose"
+            >
                 ×
             </button>
 
-            <div id="modalProduct"></div>
+            <div class="modal-image">
+
+                <img 
+                    id="modalProductImage"
+                    src=""
+                    alt=""
+                >
+
+            </div>
+
+            <div class="modal-info">
+
+                <span 
+                    id="modalProductCategory"
+                    class="product-category"
+                ></span>
+
+                <h2 id="modalProductName"></h2>
+
+                <p id="modalProductDescription"></p>
+
+                <strong 
+                    id="modalProductPrice"
+                    class="price"
+                ></strong>
+
+                <button 
+                    class="add-cart-button"
+                    id="addCartButton"
+                >
+                    Adicionar ao carrinho
+                </button>
+
+            </div>
 
         </div>
 
     </div>
 
 
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
     <script src="script.js"></script>
 
 </body>
