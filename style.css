@@ -379,7 +379,7 @@ input {
             transparent,
             rgba(0, 0, 0, 0.75)
         ),
-        url("images/posando.avif");
+        url("posando.avif");
 }
 
 
@@ -391,7 +391,7 @@ input {
             transparent,
             rgba(0, 0, 0, 0.75)
         ),
-        url("images/stye.jfif");
+        url("stye.jfif");
 }
 
 
@@ -403,7 +403,7 @@ input {
             transparent,
             rgba(0, 0, 0, 0.75)
         ),
-        url("images/açessorios.jfif");
+        url("açessorios.jfif");
 }
 
 .category-card:hover {
