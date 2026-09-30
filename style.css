@@ -351,6 +351,7 @@ input {
 
 .category-card {
     height: 430px;
+
     position: relative;
 
     display: flex;
@@ -358,91 +359,113 @@ input {
 
     overflow: hidden;
 
-    background-size: cover;
-    background-position: center;
+    background: #222;
 
-    transition: transform 0.4s ease;
+    color: #fff;
 
-    /* garante que a imagem de fundo apareça */
-    background-color: #222;
+    text-decoration: none;
+}
+
+.category-card > img {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    display: block;
+
+    transition: transform 0.5s ease;
 }
 
 
-/* FEMININO */
+/* ESCURECIMENTO DA IMAGEM */
 
-.category-card.female {
-    background-image:
-        linear-gradient(
-            to bottom,
-            rgba(0, 0, 0, 0.05),
-            rgba(0, 0, 0, 0.80)
-        ),
-        url("posando.avif");
+.category-card::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.05),
+        rgba(0, 0, 0, 0.85)
+    );
+
+    z-index: 1;
 }
 
 
-/* MASCULINO */
+/* HOVER */
 
-.category-card.male {
-    background-image:
-        linear-gradient(
-            to bottom,
-            rgba(0, 0, 0, 0.05),
-            rgba(0, 0, 0, 0.80)
-        ),
-        url("stye.jfif");
+.category-card:hover > img {
+    transform: scale(1.05);
 }
 
 
-/* ACESSÓRIOS */
-
-.category-card.accessories {
-    background-image:
-        linear-gradient(
-            to bottom,
-            rgba(0, 0, 0, 0.05),
-            rgba(0, 0, 0, 0.80)
-        ),
-        url("açessorios.jfif");
-}
-
-
-.category-card:hover {
-    transform: translateY(-5px);
-}
-
+/* TEXTO */
 
 .category-overlay {
-    width: 100%;
-    padding: 35px;
-
     position: relative;
+
     z-index: 2;
 
-    color: #ffffff;
-}
+    width: 100%;
 
+    padding: 35px;
+
+    color: #fff;
+}
 
 .category-overlay span {
+    display: block;
+
+    margin-bottom: 8px;
+
     font-size: 11px;
+
     letter-spacing: 2px;
-    opacity: 0.7;
+
+    opacity: 0.75;
 }
 
-
 .category-overlay h3 {
-    margin-top: 8px;
+    margin: 0;
 
     font-size: 34px;
+
     letter-spacing: -1px;
 }
 
-
 .category-overlay p {
-    margin-top: 7px;
+    margin-top: 8px;
 
     font-size: 13px;
-    opacity: 0.8;
+
+    opacity: 0.85;
+}
+
+
+/* ==========================================
+   CATEGORIAS - CELULAR
+========================================== */
+
+@media (max-width: 850px) {
+
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .category-card {
+        height: 380px;
+    }
 }
 /* ==========================================
    PRODUTOS
