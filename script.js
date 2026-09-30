@@ -9,17 +9,17 @@ const products = [
         name: "Blazer Estruturado",
         category: "Feminino",
         price: 249.90,
-        image: "images/blazer.jpg",
+        image: "images/Blazer estruturado.webp",
         description:
             "Blazer de corte estruturado desenvolvido para composições formais e casuais."
     },
 
     {
         id: 2,
-        name: "Camisa Essential",
+        name: "Camisa Essentials",
         category: "Masculino",
         price: 119.90,
-        image: "images/camisa.jpg",
+        image: "images/camisa essentials.webp",
         description:
             "Camisa de modelagem regular, pensada para diferentes combinações."
     },
@@ -29,7 +29,7 @@ const products = [
         name: "Calça Wide Leg",
         category: "Feminino",
         price: 179.90,
-        image: "images/calca.jpg",
+        image: "images/calça wide leg.webp",
         description:
             "Calça de modelagem ampla com proposta contemporânea."
     },
@@ -39,7 +39,7 @@ const products = [
         name: "Jaqueta Urban",
         category: "Masculino",
         price: 289.90,
-        image: "images/jaqueta.jpg",
+        image: "images/jaqueta urban.webp",
         description:
             "Jaqueta inspirada no estilo urbano e desenvolvida para uso cotidiano."
     },
@@ -49,7 +49,7 @@ const products = [
         name: "Vestido Essential",
         category: "Feminino",
         price: 159.90,
-        image: "images/vestido.jpg",
+        image: "images/vestido essential.webp",
         description:
             "Vestido de modelagem minimalista para diferentes ocasiões."
     },
@@ -59,7 +59,7 @@ const products = [
         name: "Camiseta Heavy",
         category: "Masculino",
         price: 89.90,
-        image: "images/camiseta.jpg",
+        image: "images/camiseta heavy.webp",
         description:
             "Camiseta de construção pesada e modelagem confortável."
     },
@@ -69,7 +69,7 @@ const products = [
         name: "Bolsa Mini",
         category: "Acessórios",
         price: 139.90,
-        image: "images/bolsa.jpg",
+        image: "images/bolsa mini.webp",
         description:
             "Bolsa compacta para composições urbanas."
     },
@@ -79,7 +79,7 @@ const products = [
         name: "Óculos Frame",
         category: "Acessórios",
         price: 99.90,
-        image: "images/oculos.jpg",
+        image: "images/oculos frame.webp",
         description:
             "Óculos de design contemporâneo."
     }
@@ -122,8 +122,7 @@ function renderProducts(list = products) {
 
             <div
                 class="product-image"
-                style="background-image:
-                url('${product.image}')">
+                style="background-image: url('${product.image}')">
             </div>
 
             <div class="product-info">
@@ -139,12 +138,11 @@ function renderProducts(list = products) {
                 </p>
 
             </div>
+
         `;
 
         card.addEventListener("click", () => {
-
             openProduct(product);
-
         });
 
         productGrid.appendChild(card);
@@ -155,7 +153,7 @@ function renderProducts(list = products) {
 
 
 /* =========================
-   MODAL
+   MODAL DO PRODUTO
 ========================= */
 
 function openProduct(product) {
@@ -203,6 +201,7 @@ function openProduct(product) {
             </div>
 
         </div>
+
     `;
 
     productModal.classList.add("active");
@@ -228,7 +227,6 @@ function addToCart(id) {
         cart.length;
 
     productModal.classList.remove("active");
-
 }
 
 
@@ -275,9 +273,7 @@ searchButton.addEventListener("click", () => {
     searchBox.classList.toggle("active");
 
     if (searchBox.classList.contains("active")) {
-
         searchInput.focus();
-
     }
 
 });
@@ -289,11 +285,8 @@ searchInput.addEventListener("input", () => {
         searchInput.value.toLowerCase().trim();
 
     if (!query) {
-
         renderProducts();
-
         return;
-
     }
 
     const filtered =
