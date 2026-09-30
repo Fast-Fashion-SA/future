@@ -1,4 +1,10 @@
 /* ==========================================
+   FAST FASHION
+   STYLE.CSS
+========================================== */
+
+
+/* ==========================================
    RESET
 ========================================== */
 
@@ -8,35 +14,25 @@
     box-sizing: border-box;
 }
 
-
 html {
     scroll-behavior: smooth;
 }
 
-
 body {
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
+    font-family: Arial, Helvetica, sans-serif;
     background: #ffffff;
     color: #111111;
-
     line-height: 1.5;
 }
-
 
 body.modal-open {
     overflow: hidden;
 }
 
-
 a {
     color: inherit;
     text-decoration: none;
 }
-
 
 button,
 input {
@@ -50,7 +46,6 @@ input {
 
 .top-bar {
     width: 100%;
-
     padding: 9px 20px;
 
     background: #111111;
@@ -69,7 +64,6 @@ input {
 
 .header {
     width: 100%;
-
     min-height: 82px;
 
     padding: 0 5%;
@@ -96,10 +90,8 @@ input {
     flex-shrink: 0;
 }
 
-
 .logo a {
     font-size: 25px;
-
     font-weight: 900;
 
     letter-spacing: -1.5px;
@@ -110,14 +102,12 @@ input {
 
 .nav {
     display: flex;
-
     align-items: center;
 
     gap: 25px;
 
     flex: 1;
 }
-
 
 .nav a {
     font-size: 13px;
@@ -129,17 +119,17 @@ input {
     transition: 0.2s ease;
 }
 
-
 .nav a:hover {
     color: #999999;
 }
 
 
-/* AÇÕES */
+/* ==========================================
+   AÇÕES DO HEADER
+========================================== */
 
 .header-actions {
     display: flex;
-
     align-items: center;
 
     gap: 10px;
@@ -150,7 +140,6 @@ input {
 
 .search-box input {
     width: 190px;
-
     height: 38px;
 
     padding: 0 13px;
@@ -164,13 +153,12 @@ input {
     transition: 0.2s;
 }
 
-
 .search-box input:focus {
     border-color: #111111;
 }
 
 
-/* BOTÕES HEADER */
+/* BOTÕES */
 
 .header-button {
     height: 38px;
@@ -188,17 +176,17 @@ input {
     transition: 0.2s;
 }
 
-
 .header-button:hover {
     background: #111111;
     color: #ffffff;
 }
 
 
+/* CARRINHO */
+
 .cart-button {
     position: relative;
 }
-
 
 #cartCount {
     display: inline-flex;
@@ -217,8 +205,9 @@ input {
     color: #ffffff;
 
     font-size: 10px;
-}
 
+    transition: transform 0.2s ease;
+}
 
 .cart-animation {
     transform: scale(1.35);
@@ -230,7 +219,7 @@ input {
 ========================================== */
 
 .hero {
-    min-height: 650px;
+    min-height: 620px;
 
     display: flex;
 
@@ -241,8 +230,8 @@ input {
     background:
         linear-gradient(
             90deg,
-            rgba(0, 0, 0, 0.68),
-            rgba(0, 0, 0, 0.2)
+            rgba(0, 0, 0, 0.70),
+            rgba(0, 0, 0, 0.20)
         ),
         url("images/posando.avif");
 
@@ -251,13 +240,11 @@ input {
     background-position: center;
 }
 
-
 .hero-content {
     max-width: 600px;
 
     color: #ffffff;
 }
-
 
 .hero-tag {
     display: block;
@@ -271,7 +258,6 @@ input {
     font-weight: 700;
 }
 
-
 .hero h1 {
     font-size: clamp(45px, 6vw, 82px);
 
@@ -282,7 +268,6 @@ input {
     margin-bottom: 25px;
 }
 
-
 .hero p {
     max-width: 460px;
 
@@ -292,7 +277,6 @@ input {
 
     color: #eeeeee;
 }
-
 
 .hero-button {
     display: inline-block;
@@ -310,7 +294,6 @@ input {
     transition: 0.25s;
 }
 
-
 .hero-button:hover {
     background: #111111;
 
@@ -325,14 +308,12 @@ input {
 .categories,
 .products-section,
 .responsibility {
-    padding: 100px 6%;
+    padding: 90px 6%;
 }
-
 
 .section-header {
     margin-bottom: 40px;
 }
-
 
 .section-header > span,
 .section-header span {
@@ -348,7 +329,6 @@ input {
 
     color: #777777;
 }
-
 
 .section-header h2 {
     font-size: 42px;
@@ -372,9 +352,8 @@ input {
     gap: 15px;
 }
 
-
 .category-card {
-    height: 480px;
+    height: 430px;
 
     position: relative;
 
@@ -392,7 +371,7 @@ input {
 }
 
 
-/* IMAGENS DAS CATEGORIAS */
+/* FEMININO */
 
 .category-card.female {
     background-image:
@@ -404,6 +383,8 @@ input {
 }
 
 
+/* MASCULINO */
+
 .category-card.male {
     background-image:
         linear-gradient(
@@ -414,6 +395,8 @@ input {
 }
 
 
+/* ACESSÓRIOS */
+
 .category-card.accessories {
     background-image:
         linear-gradient(
@@ -423,11 +406,9 @@ input {
         url("images/açessorios.jfif");
 }
 
-
 .category-card:hover {
     transform: translateY(-5px);
 }
-
 
 .category-overlay {
     width: 100%;
@@ -437,7 +418,6 @@ input {
     color: #ffffff;
 }
 
-
 .category-overlay span {
     font-size: 11px;
 
@@ -446,7 +426,6 @@ input {
     opacity: 0.7;
 }
 
-
 .category-overlay h3 {
     margin-top: 8px;
 
@@ -454,7 +433,6 @@ input {
 
     letter-spacing: -1px;
 }
-
 
 .category-overlay p {
     margin-top: 7px;
@@ -477,7 +455,6 @@ input {
     align-items: flex-end;
 }
 
-
 .view-all {
     border: none;
 
@@ -495,7 +472,9 @@ input {
 }
 
 
-/* GRID */
+/* ==========================================
+   GRID DOS PRODUTOS
+========================================== */
 
 .product-grid {
     display: grid;
@@ -503,33 +482,44 @@ input {
     grid-template-columns:
         repeat(4, 1fr);
 
-    gap: 30px 18px;
+    gap: 35px 18px;
 }
 
 
-/* CARD */
+/* ==========================================
+   CARD DO PRODUTO
+========================================== */
 
 .product-card {
     min-width: 0;
 
     cursor: default;
+
+    background: #ffffff;
 }
 
 
-/* IMAGEM */
+/* ==========================================
+   IMAGEM DO PRODUTO
+========================================== */
 
 .product-image {
     width: 100%;
 
-    height: 430px;
+    height: 320px;
 
     position: relative;
 
     overflow: hidden;
 
-    background: #f2f2f2;
+    background: #f3f3f3;
 }
 
+
+/*
+    A imagem fica dentro do card.
+    contain evita cortar a roupa.
+*/
 
 .product-image img {
     width: 100%;
@@ -538,14 +528,16 @@ input {
 
     display: block;
 
-    object-fit: cover;
+    object-fit: contain;
 
     object-position: center;
 
     transition:
-        transform 0.5s ease;
+        transform 0.4s ease;
 }
 
+
+/* ZOOM SUAVE */
 
 .product-card:hover
 .product-image img {
@@ -553,7 +545,9 @@ input {
 }
 
 
-/* ETIQUETA */
+/* ==========================================
+   ETIQUETA DO PRODUTO
+========================================== */
 
 .product-tag {
     position: absolute;
@@ -575,7 +569,9 @@ input {
 }
 
 
-/* BOTÃO VISUALIZAR */
+/* ==========================================
+   BOTÃO VISUALIZAR
+========================================== */
 
 .quick-view {
     position: absolute;
@@ -606,14 +602,12 @@ input {
     transition: 0.25s;
 }
 
-
 .product-card:hover
 .quick-view {
     opacity: 1;
 
     transform: translateY(0);
 }
-
 
 .quick-view:hover {
     background: #111111;
@@ -622,12 +616,13 @@ input {
 }
 
 
-/* INFORMAÇÕES */
+/* ==========================================
+   INFORMAÇÕES DO PRODUTO
+========================================== */
 
 .product-info {
     padding-top: 15px;
 }
-
 
 .product-category {
     display: block;
@@ -643,7 +638,6 @@ input {
     font-weight: 700;
 }
 
-
 .product-info h3 {
     margin-bottom: 7px;
 
@@ -651,7 +645,6 @@ input {
 
     font-weight: 600;
 }
-
 
 .product-description {
     margin-bottom: 10px;
@@ -663,7 +656,6 @@ input {
     line-height: 1.5;
 }
 
-
 .price {
     font-size: 15px;
 
@@ -671,7 +663,9 @@ input {
 }
 
 
-/* SEM RESULTADOS */
+/* ==========================================
+   SEM RESULTADOS
+========================================== */
 
 .no-results {
     padding: 80px 20px;
@@ -679,11 +673,9 @@ input {
     text-align: center;
 }
 
-
 .no-results h3 {
     margin-bottom: 8px;
 }
-
 
 .no-results p {
     color: #777777;
@@ -697,7 +689,7 @@ input {
 ========================================== */
 
 .category-section {
-    min-height: 430px;
+    min-height: 400px;
 
     padding: 80px 8%;
 
@@ -714,13 +706,11 @@ input {
     border-bottom: 1px solid #333333;
 }
 
-
 .category-section:nth-of-type(even) {
     background: #f2f2f2;
 
     color: #111111;
 }
-
 
 .category-section span {
     margin-bottom: 10px;
@@ -732,7 +722,6 @@ input {
     color: #999999;
 }
 
-
 .category-section h2 {
     margin-bottom: 15px;
 
@@ -740,7 +729,6 @@ input {
 
     letter-spacing: -3px;
 }
-
 
 .category-section p {
     max-width: 500px;
@@ -752,11 +740,9 @@ input {
     font-size: 15px;
 }
 
-
 .category-section:nth-of-type(even) p {
     color: #666666;
 }
-
 
 .category-section a {
     width: fit-content;
@@ -772,7 +758,6 @@ input {
     transition: 0.2s;
 }
 
-
 .category-section a:hover {
     background: #ffffff;
 
@@ -787,7 +772,7 @@ input {
 ========================================== */
 
 .company-section {
-    min-height: 600px;
+    min-height: 550px;
 
     padding: 100px 8%;
 
@@ -810,11 +795,9 @@ input {
     color: #ffffff;
 }
 
-
 .company-content {
     max-width: 650px;
 }
-
 
 .company-content > span {
     display: block;
@@ -828,7 +811,6 @@ input {
     color: #bbbbbb;
 }
 
-
 .company-content h2 {
     margin-bottom: 25px;
 
@@ -839,7 +821,6 @@ input {
     letter-spacing: -3px;
 }
 
-
 .company-content p {
     margin-bottom: 15px;
 
@@ -847,7 +828,6 @@ input {
 
     font-size: 15px;
 }
-
 
 .company-button {
     display: inline-block;
@@ -874,7 +854,6 @@ input {
     background: #f5f5f5;
 }
 
-
 .responsibility-grid {
     display: grid;
 
@@ -884,17 +863,15 @@ input {
     gap: 15px;
 }
 
-
 .responsibility-card {
     padding: 35px;
 
-    min-height: 260px;
+    min-height: 250px;
 
     background: #ffffff;
 
     border: 1px solid #e8e8e8;
 }
-
 
 .responsibility-card > span {
     font-size: 11px;
@@ -904,7 +881,6 @@ input {
     letter-spacing: 2px;
 }
 
-
 .responsibility-card h3 {
     margin-top: 30px;
 
@@ -912,7 +888,6 @@ input {
 
     font-size: 21px;
 }
-
 
 .responsibility-card p {
     color: #777777;
@@ -943,7 +918,6 @@ input {
     color: #ffffff;
 }
 
-
 .newsletter span {
     font-size: 11px;
 
@@ -951,7 +925,6 @@ input {
 
     color: #999999;
 }
-
 
 .newsletter h2 {
     margin-top: 8px;
@@ -963,20 +936,17 @@ input {
     letter-spacing: -2px;
 }
 
-
 .newsletter p {
     color: #aaaaaa;
 
     font-size: 14px;
 }
 
-
 #newsletterForm {
     display: flex;
 
     gap: 8px;
 }
-
 
 #emailInput {
     flex: 1;
@@ -994,11 +964,9 @@ input {
     outline: none;
 }
 
-
 #emailInput:focus {
     border-color: #ffffff;
 }
-
 
 #newsletterForm button {
     height: 50px;
@@ -1016,11 +984,9 @@ input {
     font-weight: 700;
 }
 
-
 #newsletterForm button:hover {
     background: #dddddd;
 }
-
 
 .newsletter-message {
     grid-column: 2;
@@ -1041,7 +1007,6 @@ input {
     color: #ffffff;
 }
 
-
 .footer-main {
     padding: 70px 6%;
 
@@ -1056,7 +1021,6 @@ input {
     gap: 50px;
 }
 
-
 .footer-brand h2 {
     margin-bottom: 15px;
 
@@ -1064,7 +1028,6 @@ input {
 
     letter-spacing: -1px;
 }
-
 
 .footer-brand p {
     margin-bottom: 5px;
@@ -1074,7 +1037,6 @@ input {
     font-size: 12px;
 }
 
-
 .footer-column {
     display: flex;
 
@@ -1082,7 +1044,6 @@ input {
 
     gap: 10px;
 }
-
 
 .footer-column h3 {
     margin-bottom: 10px;
@@ -1094,7 +1055,6 @@ input {
     text-transform: uppercase;
 }
 
-
 .footer-column a {
     color: #888888;
 
@@ -1103,11 +1063,9 @@ input {
     transition: 0.2s;
 }
 
-
 .footer-column a:hover {
     color: #ffffff;
 }
-
 
 .footer-bottom {
     padding: 20px 6%;
@@ -1148,16 +1106,14 @@ input {
     transition: 0.25s;
 }
 
-
 .modal.active {
     opacity: 1;
 
     visibility: visible;
 }
 
-
 .modal-content {
-    width: min(900px, 100%);
+    width: min(850px, 100%);
 
     max-height: 90vh;
 
@@ -1165,32 +1121,30 @@ input {
 
     display: grid;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns:
+        1fr 1fr;
 
     position: relative;
 
     background: #ffffff;
 }
 
-
 .modal-image {
-    height: 600px;
+    height: 500px;
 
     background: #eeeeee;
 }
-
 
 .modal-image img {
     width: 100%;
 
     height: 100%;
 
-    object-fit: cover;
+    object-fit: contain;
 }
 
-
 .modal-info {
-    padding: 60px 45px;
+    padding: 50px 40px;
 
     display: flex;
 
@@ -1198,7 +1152,6 @@ input {
 
     justify-content: center;
 }
-
 
 .modal-info h2 {
     margin-bottom: 20px;
@@ -1210,7 +1163,6 @@ input {
     letter-spacing: -2px;
 }
 
-
 .modal-info p {
     margin-bottom: 25px;
 
@@ -1219,13 +1171,14 @@ input {
     font-size: 14px;
 }
 
-
 .modal-info .price {
     margin-bottom: 30px;
 
     font-size: 20px;
 }
 
+
+/* FECHAR MODAL */
 
 .modal-close {
     position: absolute;
@@ -1256,6 +1209,8 @@ input {
 }
 
 
+/* ADICIONAR AO CARRINHO */
+
 .add-cart-button {
     width: 100%;
 
@@ -1276,7 +1231,6 @@ input {
     transition: 0.2s;
 }
 
-
 .add-cart-button:hover {
     background: #333333;
 }
@@ -1292,7 +1246,6 @@ input {
     transform: translateY(25px);
 }
 
-
 .visible {
     opacity: 1;
 
@@ -1305,7 +1258,7 @@ input {
 
 
 /* ==========================================
-   RESPONSIVIDADE
+   TABLET
 ========================================== */
 
 @media (max-width: 1100px) {
@@ -1314,29 +1267,28 @@ input {
         gap: 20px;
     }
 
-
     .nav {
         gap: 15px;
     }
 
-
     .search-box input {
         width: 140px;
     }
-
 
     .product-grid {
         grid-template-columns:
             repeat(3, 1fr);
     }
 
-
     .product-image {
-        height: 380px;
+        height: 300px;
     }
-
 }
 
+
+/* ==========================================
+   TABLET PEQUENO
+========================================== */
 
 @media (max-width: 850px) {
 
@@ -1348,11 +1300,9 @@ input {
         flex-wrap: wrap;
     }
 
-
     .logo {
         width: 100%;
     }
-
 
     .nav {
         order: 3;
@@ -1364,87 +1314,89 @@ input {
         padding-bottom: 5px;
     }
 
-
     .header-actions {
         margin-left: auto;
     }
-
 
     .category-grid {
         grid-template-columns:
             1fr;
     }
 
-
     .category-card {
-        height: 400px;
+        height: 380px;
     }
-
 
     .product-grid {
         grid-template-columns:
             repeat(2, 1fr);
     }
 
+    .product-image {
+        height: 280px;
+    }
 
     .newsletter {
         grid-template-columns:
             1fr;
     }
 
-
     .newsletter-message {
         grid-column: auto;
     }
-
 
     .footer-main {
         grid-template-columns:
             1fr 1fr;
     }
 
-
     .modal-content {
         grid-template-columns:
             1fr;
     }
 
-
     .modal-image {
-        height: 400px;
+        height: 350px;
     }
-
 }
 
 
+/* ==========================================
+   CELULAR
+========================================== */
+
 @media (max-width: 600px) {
+
+    /* HEADER */
 
     .top-bar {
         font-size: 10px;
     }
 
+    .header {
+        padding: 15px;
+    }
 
     .header-actions {
         width: 100%;
     }
 
-
     .search-box {
         flex: 1;
     }
-
 
     .search-box input {
         width: 100%;
     }
 
 
+    /* HERO */
+
     .hero {
-        min-height: 550px;
+        min-height: 520px;
 
         padding: 50px 25px;
     }
-
 
     .hero h1 {
         font-size: 50px;
@@ -1453,17 +1405,20 @@ input {
     }
 
 
+    /* SEÇÕES */
+
     .categories,
     .products-section,
     .responsibility {
-        padding: 70px 20px;
+        padding: 65px 20px;
     }
-
 
     .section-header h2 {
         font-size: 34px;
     }
 
+
+    /* PRODUTOS */
 
     .products-header {
         align-items: flex-start;
@@ -1473,44 +1428,63 @@ input {
         flex-direction: column;
     }
 
-
     .product-grid {
         grid-template-columns:
-            1fr 1fr;
+            repeat(2, 1fr);
 
         gap: 25px 10px;
     }
 
-
     .product-image {
-        height: 280px;
+        height: 230px;
     }
 
+    .product-info h3 {
+        font-size: 14px;
+    }
 
     .product-description {
         display: none;
     }
 
+    .price {
+        font-size: 14px;
+    }
+
+    .quick-view {
+        left: 8px;
+        right: 8px;
+        bottom: 8px;
+
+        height: 36px;
+
+        font-size: 10px;
+    }
+
+
+    /* CATEGORIAS */
 
     .category-section {
         padding: 70px 25px;
     }
-
 
     .category-section h2 {
         font-size: 48px;
     }
 
 
+    /* EMPRESA */
+
     .company-section {
         padding: 70px 25px;
     }
-
 
     .company-content h2 {
         font-size: 43px;
     }
 
+
+    /* RESPONSABILIDADE */
 
     .responsibility-grid {
         grid-template-columns:
@@ -1518,20 +1492,22 @@ input {
     }
 
 
+    /* NEWSLETTER */
+
     .newsletter {
         padding: 70px 25px;
     }
-
 
     #newsletterForm {
         flex-direction: column;
     }
 
-
     #newsletterForm button {
         width: 100%;
     }
 
+
+    /* FOOTER */
 
     .footer-main {
         grid-template-columns:
@@ -1540,24 +1516,26 @@ input {
         padding: 50px 25px;
     }
 
-
     .footer-bottom {
         padding: 20px 25px;
     }
 
 
+    /* MODAL */
+
     .modal {
         padding: 15px;
     }
-
 
     .modal-info {
         padding: 35px 25px;
     }
 
-
     .modal-info h2 {
         font-size: 32px;
     }
 
+    .modal-image {
+        height: 300px;
+    }
 }
