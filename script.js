@@ -1,388 +1,383 @@
-/* =========================
-   PRODUTOS
-========================= */
-
-const products = [
-
-    {
-        id: 1,
-        name: "Blazer Estruturado",
-        category: "Feminino",
-        price: 249.90,
-        image: "images/Blazer estruturado.webp",
-        description:
-            "Blazer de corte estruturado desenvolvido para composições formais e casuais."
-    },
-
-    {
-        id: 2,
-        name: "Camisa Essentials",
-        category: "Masculino",
-        price: 119.90,
-        image: "images/camisa essentials.webp",
-        description:
-            "Camisa de modelagem regular, pensada para diferentes combinações."
-    },
-
-    {
-        id: 3,
-        name: "Calça Wide Leg",
-        category: "Feminino",
-        price: 179.90,
-        image: "images/calça wide leg.webp",
-        description:
-            "Calça de modelagem ampla com proposta contemporânea."
-    },
-
-    {
-        id: 4,
-        name: "Jaqueta Urban",
-        category: "Masculino",
-        price: 289.90,
-        image: "images/jaqueta urban.webp",
-        description:
-            "Jaqueta inspirada no estilo urbano e desenvolvida para uso cotidiano."
-    },
-
-    {
-        id: 5,
-        name: "Vestido Essential",
-        category: "Feminino",
-        price: 159.90,
-        image: "images/vestido essential.webp",
-        description:
-            "Vestido de modelagem minimalista para diferentes ocasiões."
-    },
-
-    {
-        id: 6,
-        name: "Camiseta Heavy",
-        category: "Masculino",
-        price: 89.90,
-        image: "images/camiseta heavy.webp",
-        description:
-            "Camiseta de construção pesada e modelagem confortável."
-    },
-
-    {
-        id: 7,
-        name: "Bolsa Mini",
-        category: "Acessórios",
-        price: 139.90,
-        image: "images/bolsa mini.webp",
-        description:
-            "Bolsa compacta para composições urbanas."
-    },
-
-    {
-        id: 8,
-        name: "Óculos Frame",
-        category: "Acessórios",
-        price: 99.90,
-        image: "images/oculos frame.webp",
-        description:
-            "Óculos de design contemporâneo."
-    }
-
-];
+// ==========================================
+// FAST FASHION
+// SCRIPT PRINCIPAL
+// ==========================================
 
 
-/* =========================
-   ELEMENTOS
-========================= */
+// ==========================================
+// ELEMENTOS DO SITE
+// ==========================================
 
-const productGrid =
-    document.getElementById("productGrid");
+const searchInput = document.getElementById("searchInput");
+const productGrid = document.getElementById("productGrid");
+const productCards = document.querySelectorAll(".product-card");
+const noResults = document.getElementById("noResults");
 
-const cartCounter =
-    document.getElementById("cartCounter");
+const cartButton = document.getElementById("cartButton");
+const cartCount = document.getElementById("cartCount");
 
-const productModal =
-    document.getElementById("productModal");
+const accountButton = document.getElementById("accountButton");
 
-const modalProduct =
-    document.getElementById("modalProduct");
+const viewAllButton = document.getElementById("viewAllButton");
+
+const quickViewButtons = document.querySelectorAll(".quick-view");
+
+const productModal = document.getElementById("productModal");
+const modalClose = document.getElementById("modalClose");
+
+const modalProductImage = document.getElementById("modalProductImage");
+const modalProductCategory = document.getElementById("modalProductCategory");
+const modalProductName = document.getElementById("modalProductName");
+const modalProductDescription = document.getElementById("modalProductDescription");
+const modalProductPrice = document.getElementById("modalProductPrice");
+
+const addCartButton = document.getElementById("addCartButton");
+
+const newsletterForm = document.getElementById("newsletterForm");
+const emailInput = document.getElementById("emailInput");
+const newsletterMessage = document.getElementById("newsletterMessage");
 
 
-/* =========================
-   RENDERIZAR PRODUTOS
-========================= */
+// ==========================================
+// CARRINHO
+// ==========================================
 
-function renderProducts(list = products) {
+let cartItems = 0;
 
-    productGrid.innerHTML = "";
 
-    list.forEach(product => {
+// Adicionar produto ao carrinho
+function addToCart() {
 
-        const card = document.createElement("article");
+    cartItems++;
 
-        card.classList.add("product-card");
+    cartCount.textContent = cartItems;
 
-        card.innerHTML = `
+    // Pequena animação
+    cartCount.classList.add("cart-animation");
 
-            <div
-                class="product-image"
-                style="background-image: url('${product.image}')">
-            </div>
-
-            <div class="product-info">
-
-                <h3>${product.name}</h3>
-
-                <p class="product-category">
-                    ${product.category}
-                </p>
-
-                <p class="product-price">
-                    R$ ${product.price.toFixed(2).replace(".", ",")}
-                </p>
-
-            </div>
-
-        `;
-
-        card.addEventListener("click", () => {
-            openProduct(product);
-        });
-
-        productGrid.appendChild(card);
-
-    });
+    setTimeout(() => {
+        cartCount.classList.remove("cart-animation");
+    }, 300);
 
 }
 
 
-/* =========================
-   MODAL DO PRODUTO
-========================= */
+// Botão do carrinho
+cartButton.addEventListener("click", () => {
 
-function openProduct(product) {
+    if (cartItems === 0) {
 
-    modalProduct.innerHTML = `
+        alert("Seu carrinho está vazio.");
 
-        <div class="modal-product">
+    } else {
 
-            <img
-                src="${product.image}"
-                alt="${product.name}"
-            >
-
-            <div>
-
-                <p class="eyebrow">
-                    ${product.category}
-                </p>
-
-                <h2>
-                    ${product.name}
-                </h2>
-
-                <p class="product-price">
-                    R$ ${product.price
-                        .toFixed(2)
-                        .replace(".", ",")}
-                </p>
-
-                <br>
-
-                <p>
-                    ${product.description}
-                </p>
-
-                <br>
-
-                <button
-                    class="button button-dark"
-                    onclick="addToCart(${product.id})"
-                >
-                    Adicionar ao carrinho
-                </button>
-
-            </div>
-
-        </div>
-
-    `;
-
-    productModal.classList.add("active");
-}
-
-
-/* =========================
-   CARRINHO
-========================= */
-
-let cart = [];
-
-function addToCart(id) {
-
-    const product =
-        products.find(item => item.id === id);
-
-    if (!product) return;
-
-    cart.push(product);
-
-    cartCounter.textContent =
-        cart.length;
-
-    productModal.classList.remove("active");
-}
-
-
-/* =========================
-   FECHAR MODAL
-========================= */
-
-document
-    .getElementById("closeModal")
-    .addEventListener("click", () => {
-
-        productModal.classList.remove("active");
-
-    });
-
-
-productModal.addEventListener("click", event => {
-
-    if (event.target === productModal) {
-
-        productModal.classList.remove("active");
+        alert(
+            `Você possui ${cartItems} ${
+                cartItems === 1 ? "produto" : "produtos"
+            } no carrinho.`
+        );
 
     }
 
 });
 
 
-/* =========================
-   BUSCA
-========================= */
+// ==========================================
+// CONTA
+// ==========================================
 
-const searchButton =
-    document.getElementById("searchButton");
+accountButton.addEventListener("click", () => {
 
-const searchBox =
-    document.getElementById("searchBox");
-
-const searchInput =
-    document.getElementById("searchInput");
-
-
-searchButton.addEventListener("click", () => {
-
-    searchBox.classList.toggle("active");
-
-    if (searchBox.classList.contains("active")) {
-        searchInput.focus();
-    }
+    alert(
+        "Área do cliente\n\n" +
+        "Em breve você poderá acessar sua conta, " +
+        "acompanhar pedidos e gerenciar seus dados."
+    );
 
 });
 
+
+// ==========================================
+// BUSCA DE PRODUTOS
+// ==========================================
 
 searchInput.addEventListener("input", () => {
 
-    const query =
-        searchInput.value.toLowerCase().trim();
+    const searchTerm = searchInput.value
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .trim();
 
-    if (!query) {
-        renderProducts();
-        return;
+    let visibleProducts = 0;
+
+
+    productCards.forEach(card => {
+
+        const productName = card
+            .getAttribute("data-name")
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "");
+
+        const productCategory = card
+            .getAttribute("data-category")
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "");
+
+
+        const matches =
+            productName.includes(searchTerm) ||
+            productCategory.includes(searchTerm);
+
+
+        if (matches) {
+
+            card.style.display = "";
+
+            visibleProducts++;
+
+        } else {
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+
+    // Mostrar ou esconder mensagem
+    if (visibleProducts === 0) {
+
+        noResults.style.display = "block";
+
+    } else {
+
+        noResults.style.display = "none";
+
     }
-
-    const filtered =
-        products.filter(product =>
-
-            product.name
-                .toLowerCase()
-                .includes(query)
-
-            ||
-
-            product.category
-                .toLowerCase()
-                .includes(query)
-
-        );
-
-    renderProducts(filtered);
 
 });
 
 
-/* =========================
-   NEWSLETTER
-========================= */
+// ==========================================
+// BOTÃO "VER TODOS"
+// ==========================================
 
-document
-    .getElementById("newsletterForm")
-    .addEventListener("submit", event => {
+viewAllButton.addEventListener("click", () => {
 
-        event.preventDefault();
+    searchInput.value = "";
 
-        const email =
-            document.getElementById("email").value;
+    productCards.forEach(card => {
 
-        const message =
-            document.getElementById("newsletterMessage");
-
-        message.textContent =
-            `Cadastro realizado para ${email}.`;
-
-        event.target.reset();
+        card.style.display = "";
 
     });
 
+    noResults.style.display = "none";
 
-/* =========================
-   CONTA
-========================= */
+    document
+        .getElementById("novidades")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
 
-document
-    .getElementById("accountButton")
-    .addEventListener("click", () => {
+});
 
-        alert(
-            "Área do cliente — funcionalidade demonstrativa."
-        );
+
+// ==========================================
+// MODAL DOS PRODUTOS
+// ==========================================
+
+quickViewButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        const card = button.closest(".product-card");
+
+
+        // Buscar informações diretamente do HTML
+        const image = card.querySelector("img").src;
+
+        const imageAlt = card.querySelector("img").alt;
+
+        const category = card.querySelector(
+            ".product-category"
+        ).textContent;
+
+        const name = card.querySelector("h3").textContent;
+
+        const description = card.querySelector(
+            ".product-description"
+        ).textContent;
+
+        const price = card.querySelector(
+            ".price"
+        ).textContent;
+
+
+        // Colocar informações no modal
+        modalProductImage.src = image;
+
+        modalProductImage.alt = imageAlt;
+
+        modalProductCategory.textContent = category;
+
+        modalProductName.textContent = name;
+
+        modalProductDescription.textContent = description;
+
+        modalProductPrice.textContent = price;
+
+
+        // Mostrar modal
+        productModal.classList.add("active");
+
+        // Impedir scroll da página
+        document.body.classList.add("modal-open");
 
     });
 
-
-/* =========================
-   CARRINHO
-========================= */
-
-document
-    .getElementById("cartButton")
-    .addEventListener("click", () => {
-
-        if (cart.length === 0) {
-
-            alert("Seu carrinho está vazio.");
-
-            return;
-
-        }
-
-        const total =
-            cart.reduce(
-                (sum, product) =>
-                    sum + product.price,
-                0
-            );
-
-        alert(
-            `Você possui ${cart.length} item(ns) no carrinho.\n\n` +
-            `Total: R$ ${total
-                .toFixed(2)
-                .replace(".", ",")}`
-        );
-
-    });
+});
 
 
-/* =========================
-   INICIALIZAÇÃO
-========================= */
+// ==========================================
+// FECHAR MODAL
+// ==========================================
 
-renderProducts();
+function closeModal() {
+
+    productModal.classList.remove("active");
+
+    document.body.classList.remove("modal-open");
+
+}
+
+
+modalClose.addEventListener("click", closeModal);
+
+
+// Fechar clicando fora do conteúdo
+productModal.addEventListener("click", (event) => {
+
+    if (event.target === productModal) {
+
+        closeModal();
+
+    }
+
+});
+
+
+// Fechar com ESC
+document.addEventListener("keydown", (event) => {
+
+    if (event.key === "Escape") {
+
+        closeModal();
+
+    }
+
+});
+
+
+// ==========================================
+// ADICIONAR AO CARRINHO PELO MODAL
+// ==========================================
+
+addCartButton.addEventListener("click", () => {
+
+    addToCart();
+
+    addCartButton.textContent = "Adicionado ✓";
+
+
+    setTimeout(() => {
+
+        addCartButton.textContent =
+            "Adicionar ao carrinho";
+
+    }, 1500);
+
+});
+
+
+// ==========================================
+// NEWSLETTER
+// ==========================================
+
+newsletterForm.addEventListener("submit", (event) => {
+
+    event.preventDefault();
+
+
+    const email = emailInput.value.trim();
+
+
+    if (email === "") {
+
+        newsletterMessage.textContent =
+            "Digite um e-mail válido.";
+
+        return;
+
+    }
+
+
+    newsletterMessage.textContent =
+        "Cadastro realizado com sucesso!";
+
+
+    emailInput.value = "";
+
+});
+
+
+// ==========================================
+// ANIMAÇÃO AO ENTRAR NA PÁGINA
+// ==========================================
+
+const animatedElements = document.querySelectorAll(
+    ".product-card, .responsibility-card, .category-card"
+);
+
+
+const observer = new IntersectionObserver(
+    (entries) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.classList.add("visible");
+
+                observer.unobserve(entry.target);
+
+            }
+
+        });
+
+    },
+    {
+        threshold: 0.1
+    }
+);
+
+
+animatedElements.forEach(element => {
+
+    element.classList.add("hidden");
+
+    observer.observe(element);
+
+});
+
+
+// ==========================================
+// LOG INICIAL
+// ==========================================
+
+console.log(
+    "Fast Fashion — site carregado com sucesso."
+);
